@@ -1,0 +1,73 @@
+﻿using MelonLoader;
+
+using System.Collections;
+using System.IO;
+using DateTime = System.DateTime;
+
+using UnityEngine;
+
+namespace BoneSnap
+{
+    internal static class Screenshotter
+    {
+        private static readonly string _screenshotFolder = "UserData/Screenshots";
+        private static int _screenshotIndex = 0;
+        public delegate void ScreenshotCallback(byte[] image);
+
+        private static string GenerateTimecode(DateTime time)
+        {
+            string datestamp = time.ToString("yyyy-MM-dd");
+            string timestamp = time.ToString("HH.mm.ss");
+
+            return datestamp + " " + timestamp;
+        }
+
+        public static byte[] TakeScreenshot(int quality=100)
+        {
+            MelonLogger.Msg("Preparing screenshot");
+
+            string format = (quality == 100) ? "png" : "jpg";
+
+            // Capture the entire screen
+            int width = Screen.width;
+            int height = Screen.height;
+            Texture2D screenshotTexture = new Texture2D(width, height);
+
+            // Read screen contents into the texture
+            screenshotTexture.ReadPixels(new Rect(0, 0, width, height), 0, 0);
+            screenshotTexture.Apply();
+
+            // Encode texture into PNG
+            byte[] bytes = (format == "png") ? ImageConversion.EncodeToPNG(screenshotTexture) : ImageConversion.EncodeToJPG(screenshotTexture, quality: quality);
+            Object.Destroy(screenshotTexture);
+
+            // Output to file
+            _screenshotIndex++;
+            Directory.CreateDirectory(_screenshotFolder);
+            string timecode = GenerateTimecode(DateTime.Now);
+            string outputPath = _screenshotFolder + $"/{timecode} {_screenshotIndex}.{format}";
+            File.WriteAllBytes(outputPath, bytes);
+            MelonLogger.Msg($"Screenshot saved as {outputPath}!");
+
+            return bytes;
+        }
+
+        public static IEnumerator CoPrepareScreenshot(float waitTime, int quality, ScreenshotCallback callback = null)
+        {
+            float timeWaited = 0;
+
+            while (timeWaited < waitTime)
+            {
+                timeWaited += Time.deltaTime;
+                yield return null;
+            }
+
+            byte[] bytes = TakeScreenshot(quality);
+
+            if (!(callback is null))
+            {
+                callback(bytes);
+            }
+        }
+    }
+}

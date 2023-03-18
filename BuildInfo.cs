@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace bonelab_template
+namespace BoneSnap
 {
     internal partial class Main
     {
-        internal const string Name = "Mod Name";
-        internal const string Description = "Mod Description";
-        internal const string Author = "Mod Author";
-        internal const string Company = "Mod Company";
-        internal const string Version = "0.0.1";
+        internal const string Name = "BoneSnap";
+        internal const string Description = "A screenshot tool for Bonelab";
+        internal const string Author = "Fizzyhex";
+        internal const string Company = "";
+        internal const string Version = "0.0.2";
         internal const string DownloadLink = "Link";
     }
 }

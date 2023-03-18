@@ -1,16 +1,16 @@
 ﻿using System.Reflection;
-using bonelab_template;
+using BoneSnap;
 using MelonLoader;
 
-[assembly: AssemblyTitle(bonelab_template.Main.Description)]
-[assembly: AssemblyDescription(bonelab_template.Main.Description)]
-[assembly: AssemblyCompany(bonelab_template.Main.Company)]
-[assembly: AssemblyProduct(bonelab_template.Main.Name)]
-[assembly: AssemblyCopyright("Developed by " + bonelab_template.Main.Author)]
-[assembly: AssemblyTrademark(bonelab_template.Main.Company)]
-[assembly: AssemblyVersion(bonelab_template.Main.Version)]
-[assembly: AssemblyFileVersion(bonelab_template.Main.Version)]
-[assembly: MelonInfo(typeof(bonelab_template.Main), bonelab_template.Main.Name, bonelab_template.Main.Version, bonelab_template.Main.Author, bonelab_template.Main.DownloadLink)]
+[assembly: AssemblyTitle(BoneSnap.Main.Description)]
+[assembly: AssemblyDescription(BoneSnap.Main.Description)]
+[assembly: AssemblyCompany(BoneSnap.Main.Company)]
+[assembly: AssemblyProduct(BoneSnap.Main.Name)]
+[assembly: AssemblyCopyright("Developed by " + BoneSnap.Main.Author)]
+[assembly: AssemblyTrademark(BoneSnap.Main.Company)]
+[assembly: AssemblyVersion(BoneSnap.Main.Version)]
+[assembly: AssemblyFileVersion(BoneSnap.Main.Version)]
+[assembly: MelonInfo(typeof(BoneSnap.Main), BoneSnap.Main.Name, BoneSnap.Main.Version, BoneSnap.Main.Author, BoneSnap.Main.DownloadLink)]
 [assembly: MelonColor(System.ConsoleColor.White)]
 
 // Create and Setup a MelonGame Attribute to mark a Melon as Universal or Compatible with specific Games.
