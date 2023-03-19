@@ -1,4 +1,4 @@
-![BoneSnap Banner](https://github.com/Fizzyhex/bonelab-bonesnap/blob/main/media/banner.png "BoneMenu -> BoneSnap")
+![BoneSnap Banner]([https://github.com/Fizzyhex/bonelab-bonesnap/blob/main/media/banner.png](https://github.com/Fizzyhex/bonelab-bonesnap/blob/main/media/banner.png?raw=true) "BoneMenu -> BoneSnap")
 
 
 # 📷 BoneSnap - A BONELAB Screenshotting Tool
