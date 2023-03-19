@@ -1,7 +1,7 @@
 ![BoneSnap Banner](https://github.com/Fizzyhex/bonelab-bonesnap/blob/main/media/banner.png "BoneMenu -> BoneSnap")
 
 
-# 📷 BoneSnap - A BONELAB Code Mod
+# 📷 BoneSnap - A BONELAB Screenshot Tool
 [Thunderstore](https://bonelab.thunderstore.io/package/Fizzyhex/BoneSnap) | [GitHub](https://github.com/Fizzyhex/bonelab-bonesnap)
 
 Take screenshots your game window with ease, with no more 4:3 jpgs and fumbling around blindly for your keyboard! All captures are saved to your clipboard and the UserData\Screenshots folder.
