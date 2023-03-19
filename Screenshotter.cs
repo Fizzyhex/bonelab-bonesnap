@@ -1,9 +1,9 @@
 ﻿using MelonLoader;
-
 using System.Collections;
 using System.IO;
+using System.Drawing;
 using DateTime = System.DateTime;
-
+using System.Windows.Forms;
 using UnityEngine;
 
 namespace BoneSnap
@@ -29,8 +29,8 @@ namespace BoneSnap
             string format = (quality == 100) ? "png" : "jpg";
 
             // Capture the entire screen
-            int width = Screen.width;
-            int height = Screen.height;
+            int width = UnityEngine.Screen.width;
+            int height = UnityEngine.Screen.height;
             Texture2D screenshotTexture = new Texture2D(width, height);
 
             // Read screen contents into the texture
@@ -47,6 +47,10 @@ namespace BoneSnap
             string timecode = GenerateTimecode(DateTime.Now);
             string outputPath = _screenshotFolder + $"/{timecode} {_screenshotIndex}.{format}";
             File.WriteAllBytes(outputPath, bytes);
+            Clipboard.SetImage(
+                (Bitmap)((new ImageConverter()).ConvertFrom(bytes))
+            );
+            
             MelonLogger.Msg($"Screenshot saved as {outputPath}!");
 
             return bytes;

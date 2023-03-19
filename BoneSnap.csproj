@@ -66,6 +66,7 @@
       <HintPath>E:\OculusStoreLibrary\Software\stress-level-zero-inc-bonelab\MelonLoader\Managed\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Json">
       <HintPath>E:\OculusStoreLibrary\Software\stress-level-zero-inc-bonelab\MelonLoader\Managed\System.Json.dll</HintPath>
     </Reference>

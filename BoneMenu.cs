@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using BoneLib.BoneMenu;
-using BoneLib.BoneMenu.UI;
-using BoneLib.BoneMenu.Elements;
-
+﻿using BoneLib.BoneMenu.Elements;
 using System.Windows.Forms;
-
 using MelonLoader;
-
 using UnityEngine;
 
 namespace BoneSnap
@@ -30,7 +19,7 @@ namespace BoneSnap
         public static void CreateBoneMenu(MenuCategory rootCategory)
         {
             rootCategory.CreateFunctionElement(
-                "Take Local Screenshot",
+                "Capture Window",
                 Color.white,
                 () => MelonCoroutines.Start(BoneSnap.Screenshotter.CoPrepareScreenshot(
                     BoneSnap.Preferences.captureDelay.Value,
@@ -41,7 +30,7 @@ namespace BoneSnap
             if (_enableDiscordIntegration)
             {
                 rootCategory.CreateFunctionElement(
-                    "Take Discord Screenshot",
+                    "Capture To Discord",
                     Color.white,
                     () => MelonCoroutines.Start(BoneSnap.Screenshotter.CoPrepareScreenshot(
                         BoneSnap.Preferences.captureDelay.Value,
@@ -63,10 +52,12 @@ namespace BoneSnap
                 BoneSnap.Preferences.ManualSave();
             });
 
+            rootCategory.CreateFunctionElement(@"Outputting to clipboard & UserData\Screenshots", Color.cyan, null);
+
             if (_enableDiscordIntegration)
             {
                 var currentWebhook = BoneSnap.Preferences.currentDiscordWebhook.Value;
-                rootCategory.CreateFunctionElement(string.IsNullOrWhiteSpace(currentWebhook) ? "No webhook" : $"Webhook: {currentWebhook}", Color.blue, null);
+                rootCategory.CreateFunctionElement(string.IsNullOrWhiteSpace(currentWebhook) ? "No webhook" : $"Webhook: {currentWebhook}", Color.cyan, null);
                 rootCategory.CreateFunctionElement("Paste Webhook", Color.white, delegate ()
                 {
                     BoneSnap.Preferences.currentDiscordWebhook.Value = Clipboard.GetText();
