@@ -13,6 +13,6 @@ namespace BoneSnap
         internal const string Author = "Fizzyhex";
         internal const string Company = "";
         internal const string Version = "1.0.0";
-        internal const string DownloadLink = "Link";
+        internal const string DownloadLink = "https://bonelab.thunderstore.io/package/Fizzyhex/BoneSnap";
     }
 }
