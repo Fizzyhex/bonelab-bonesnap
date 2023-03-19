@@ -19,7 +19,7 @@ namespace BoneSnap
         public static void CreateBoneMenu(MenuCategory rootCategory)
         {
             rootCategory.CreateFunctionElement(
-                "Capture Window",
+                "Screenshot Window",
                 Color.white,
                 () => MelonCoroutines.Start(BoneSnap.Screenshotter.CoPrepareScreenshot(
                     BoneSnap.Preferences.captureDelay.Value,
@@ -30,7 +30,7 @@ namespace BoneSnap
             if (_enableDiscordIntegration)
             {
                 rootCategory.CreateFunctionElement(
-                    "Capture To Discord",
+                    "Screenshot To Discord",
                     Color.white,
                     () => MelonCoroutines.Start(BoneSnap.Screenshotter.CoPrepareScreenshot(
                         BoneSnap.Preferences.captureDelay.Value,
