@@ -9,10 +9,10 @@ namespace BoneSnap
     internal partial class Main
     {
         internal const string Name = "BoneSnap";
-        internal const string Description = "A screenshot tool for Bonelab";
+        internal const string Description = "A window capture tool for BONELAB";
         internal const string Author = "Fizzyhex";
         internal const string Company = "";
-        internal const string Version = "0.0.2";
+        internal const string Version = "1.0.0";
         internal const string DownloadLink = "Link";
     }
 }
