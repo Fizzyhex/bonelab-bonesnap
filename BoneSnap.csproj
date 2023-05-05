@@ -39,6 +39,8 @@
   <ItemGroup>
     <Compile Include="BoneMenu.cs" />
     <Compile Include="BuildInfo.cs" />
+    <Compile Include="AssetManager.cs" />
+    <Compile Include="AudioManager.cs" />
     <Compile Include="DiscordWebhook.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Preferences.cs" />
@@ -49,6 +51,9 @@
     <Reference Include="Assembly-CSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>E:\OculusStoreLibrary\Software\stress-level-zero-inc-bonelab\MelonLoader\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="AudioImportLib">
+      <HintPath>E:\OculusStoreLibrary\Software\stress-level-zero-inc-bonelab\Mods\AudioImportLib.dll</HintPath>
     </Reference>
     <Reference Include="BoneLib, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -85,6 +90,7 @@
     <Reference Include="Unity.Collections">
       <HintPath>E:\OculusStoreLibrary\Software\stress-level-zero-inc-bonelab\MelonLoader\Managed\Unity.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>E:\OculusStoreLibrary\Software\stress-level-zero-inc-bonelab\MelonLoader\Managed\UnityEngine.CoreModule.dll</HintPath>

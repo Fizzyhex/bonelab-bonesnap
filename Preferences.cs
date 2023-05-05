@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.IO;
 using MelonLoader;
 
 namespace BoneSnap
@@ -14,16 +9,19 @@ namespace BoneSnap
         public static MelonPreferences_Entry<int> captureDelay;
         public static MelonPreferences_Entry<int> captureQuality;
         public static MelonPreferences_Entry<string> currentDiscordWebhook;
+        public static MelonPreferences_Entry<string> outputPath;
 
         public static void CreateMelonPreferences(MelonPreferences_Category category)
         {
             currentCategory = category;
-            captureDelay = category.CreateEntry<int>("CaptureDelay", 3);
-            captureQuality = category.CreateEntry<int>("CaptureQuality", 100);
-            currentDiscordWebhook = category.CreateEntry<string>("CurrentDiscordWebhook", "");
+            captureDelay = category.CreateEntry("CaptureDelay", 4);
+            captureQuality = category.CreateEntry("CaptureQuality", 95);
+            currentDiscordWebhook = category.CreateEntry("CurrentDiscordWebhook", "");
+            outputPath = category.CreateEntry("OutputPath", "UserData/Screenshots");
+            Directory.CreateDirectory(outputPath.Value);
         }
 
-        // Need to do this in a better way...
+        // May need to find a better solution...
         public static void ManualSave()
         {
             currentCategory.SaveToFile();

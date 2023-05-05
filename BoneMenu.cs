@@ -8,7 +8,7 @@ namespace BoneSnap
     internal class BoneMenu
     {
         // i wanted to implement discord webhook integration, but i havent been able to get it working :(
-        // if anyone knows what i can do to fix it please do tell
+        // if anyone has any ideas feel free to contribute
         private static readonly bool _enableDiscordIntegration = false;
 
         private static void DiscordCallback(byte[] imageData)
@@ -21,20 +21,22 @@ namespace BoneSnap
             rootCategory.CreateFunctionElement(
                 "Screenshot Window",
                 Color.white,
-                () => MelonCoroutines.Start(BoneSnap.Screenshotter.CoPrepareScreenshot(
+                () => MelonCoroutines.Start(Screenshotter.CoPrepareScreenshot(
                     BoneSnap.Preferences.captureDelay.Value,
-                    BoneSnap.Preferences.captureQuality.Value
+                    BoneSnap.Preferences.captureQuality.Value,
+                    BoneSnap.Preferences.outputPath.Value
                 ))
             );
 
             if (_enableDiscordIntegration)
             {
                 rootCategory.CreateFunctionElement(
-                    "Screenshot To Discord",
+                    "Screenshot to Discord",
                     Color.white,
-                    () => MelonCoroutines.Start(BoneSnap.Screenshotter.CoPrepareScreenshot(
+                    () => MelonCoroutines.Start(Screenshotter.CoPrepareScreenshot(
                         BoneSnap.Preferences.captureDelay.Value,
                         BoneSnap.Preferences.captureQuality.Value,
+                        BoneSnap.Preferences.outputPath.Value,
                         DiscordCallback
                     ))
                 );
@@ -52,7 +54,7 @@ namespace BoneSnap
                 BoneSnap.Preferences.ManualSave();
             });
 
-            rootCategory.CreateFunctionElement(@"Outputting to clipboard & UserData\Screenshots", Color.cyan, null);
+            rootCategory.CreateFunctionElement($@"Outputting to clipboard & {BoneSnap.Preferences.outputPath.Value}", Color.cyan, null);
 
             if (_enableDiscordIntegration)
             {

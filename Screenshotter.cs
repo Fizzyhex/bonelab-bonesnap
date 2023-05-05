@@ -10,7 +10,8 @@ namespace BoneSnap
 {
     internal static class Screenshotter
     {
-        private static readonly string _screenshotFolder = "UserData/Screenshots";
+        private static readonly string _userDataPath = MelonUtils.UserDataDirectory;
+        private static readonly string _audioPath = $"{_userDataPath}/BoneSnap/Audio";
         private static int _screenshotIndex = 0;
         public delegate void ScreenshotCallback(byte[] image);
 
@@ -22,7 +23,7 @@ namespace BoneSnap
             return datestamp + " " + timestamp;
         }
 
-        public static byte[] TakeScreenshot(int quality=100)
+        private static byte[] TakeScreenshot(string outputPath, int quality=100)
         {
             MelonLogger.Msg("Preparing screenshot");
 
@@ -43,21 +44,24 @@ namespace BoneSnap
 
             // Output to file
             _screenshotIndex++;
-            Directory.CreateDirectory(_screenshotFolder);
+            Directory.CreateDirectory(outputPath);
             string timecode = GenerateTimecode(DateTime.Now);
-            string outputPath = _screenshotFolder + $"/{timecode} {_screenshotIndex}.{format}";
-            File.WriteAllBytes(outputPath, bytes);
+            string filePath = outputPath + $"/{timecode} {_screenshotIndex}.{format}";
+            File.WriteAllBytes(filePath, bytes);
             Clipboard.SetImage(
                 (Bitmap)((new ImageConverter()).ConvertFrom(bytes))
             );
             
-            MelonLogger.Msg($"Screenshot saved as {outputPath}!");
+            MelonLogger.Msg($"Screenshot saved as {filePath}!");
 
             return bytes;
         }
 
-        public static IEnumerator CoPrepareScreenshot(float waitTime, int quality, ScreenshotCallback callback = null)
+        public static IEnumerator CoPrepareScreenshot(float waitTime, int quality, string outputPath, ScreenshotCallback callback = null)
         {
+            MelonLogger.Msg("Playing timer audio");
+            AudioManager.Play(AssetManager.captureTimerAudio);
+            MelonLogger.Msg("Done timer audio");
             float timeWaited = 0;
 
             while (timeWaited < waitTime)
@@ -66,7 +70,9 @@ namespace BoneSnap
                 yield return null;
             }
 
-            byte[] bytes = TakeScreenshot(quality);
+            AudioManager.Play(AssetManager.captureStartAudio);
+            byte[] bytes = TakeScreenshot(outputPath, quality);
+            AudioManager.Play(AssetManager.captureCompleteAudio);
 
             if (!(callback is null))
             {
