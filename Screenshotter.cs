@@ -26,7 +26,6 @@ namespace BoneSnap
         private static byte[] TakeScreenshot(string outputPath, int quality=100)
         {
             MelonLogger.Msg("Preparing screenshot");
-
             string format = (quality == 100) ? "png" : "jpg";
 
             // Capture the entire screen
@@ -59,9 +58,7 @@ namespace BoneSnap
 
         public static IEnumerator CoPrepareScreenshot(float waitTime, int quality, string outputPath, ScreenshotCallback callback = null)
         {
-            MelonLogger.Msg("Playing timer audio");
             AudioManager.Play(AssetManager.captureTimerAudio);
-            MelonLogger.Msg("Done timer audio");
             float timeWaited = 0;
 
             while (timeWaited < waitTime)
