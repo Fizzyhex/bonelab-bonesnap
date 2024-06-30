@@ -8,113 +8,83 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Reference Include="0Harmony">
+        <HintPath>References\net6\0Harmony.dll</HintPath>
+      </Reference>
+      <Reference Include="Assembly-CSharp">
+        <HintPath>References\Il2CppAssemblies\Assembly-CSharp.dll</HintPath>
+      </Reference>
+      <Reference Include="Assembly-CSharp-firstpass">
+        <HintPath>References\Il2CppAssemblies\Assembly-CSharp-firstpass.dll</HintPath>
+      </Reference>
       <Reference Include="AudioImportLib">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\Mods\AudioImportLib.dll</HintPath>
+        <HintPath>References\AudioImportLib.dll</HintPath>
       </Reference>
       <Reference Include="BoneLib">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\Mods\BoneLib.dll</HintPath>
+        <HintPath>References\BoneLib.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppInterop.Common">
+        <HintPath>References\net6\Il2CppInterop.Common.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppInterop.Generator">
+        <HintPath>References\net6\Il2CppInterop.Generator.dll</HintPath>
       </Reference>
       <Reference Include="Il2CppInterop.Runtime">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\net6\Il2CppInterop.Runtime.dll</HintPath>
+        <HintPath>References\net6\Il2CppInterop.Runtime.dll</HintPath>
       </Reference>
       <Reference Include="Il2Cppmscorlib">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
+        <HintPath>References\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppSLZ.Algorithms">
+        <HintPath>References\Il2CppAssemblies\Il2CppSLZ.Algorithms.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppSLZ.Algorithms.Unity">
+        <HintPath>References\Il2CppAssemblies\Il2CppSLZ.Algorithms.Unity.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppSLZ.Marrow">
+        <HintPath>References\Il2CppAssemblies\Il2CppSLZ.Marrow.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppSLZ.Marrow.VoidLogic.Core">
+        <HintPath>References\Il2CppAssemblies\Il2CppSLZ.Marrow.VoidLogic.Core.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppSLZ.Marrow.VoidLogic.Engine">
+        <HintPath>References\Il2CppAssemblies\Il2CppSLZ.Marrow.VoidLogic.Engine.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppSLZ.ModIO">
+        <HintPath>References\Il2CppAssemblies\Il2CppSLZ.ModIO.dll</HintPath>
+      </Reference>
+      <Reference Include="Il2CppSLZ.Serialize">
+        <HintPath>References\Il2CppAssemblies\Il2CppSLZ.Serialize.dll</HintPath>
       </Reference>
       <Reference Include="MelonLoader">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\net6\MelonLoader.dll</HintPath>
+        <HintPath>References\net6\MelonLoader.dll</HintPath>
       </Reference>
-      <Reference Include="Microsoft.CSharp">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\Microsoft.CSharp.dll</HintPath>
-      </Reference>
-      <Reference Include="mscorlib">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\mscorlib.dll</HintPath>
-      </Reference>
-      <Reference Include="netstandard">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\netstandard.dll</HintPath>
-      </Reference>
-      <Reference Include="System">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.dll</HintPath>
-      </Reference>
-      <Reference Include="System.ComponentModel.DataAnnotations">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.ComponentModel.DataAnnotations.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Configuration">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.Configuration.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Core">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.Core.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Data">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.Data.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Data.DataSetExtensions">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.Data.DataSetExtensions.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Drawing">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.Drawing.dll</HintPath>
+      <Reference Include="Newtonsoft.Json">
+        <HintPath>References\Managed\Newtonsoft.Json.dll</HintPath>
       </Reference>
       <Reference Include="System.Drawing.Common">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\net6\System.Drawing.Common.dll</HintPath>
-      </Reference>
-      <Reference Include="System.IO.Compression">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.IO.Compression.dll</HintPath>
-      </Reference>
-      <Reference Include="System.IO.Compression.FileSystem">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.IO.Compression.FileSystem.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Net">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.Net.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Net.Http">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.Net.Http.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Net.Http.Formatting">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.Net.Http.Formatting.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Numerics">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.Numerics.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Numerics.Vectors">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.Numerics.Vectors.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Runtime.Serialization">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.Runtime.Serialization.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Security">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.Security.dll</HintPath>
-      </Reference>
-      <Reference Include="System.ServiceModel.Web">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.ServiceModel.Web.dll</HintPath>
-      </Reference>
-      <Reference Include="System.ServiceProcess">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.ServiceProcess.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Transactions">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.Transactions.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Web">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.Web.dll</HintPath>
+        <HintPath>References\net6\System.Drawing.Common.dll</HintPath>
       </Reference>
       <Reference Include="System.Windows.Forms">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.Windows.Forms.dll</HintPath>
+        <HintPath>References\Managed\System.Windows.Forms.dll</HintPath>
       </Reference>
-      <Reference Include="System.Xml">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.Xml.dll</HintPath>
-      </Reference>
-      <Reference Include="System.Xml.Linq">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\System.Xml.Linq.dll</HintPath>
+      <Reference Include="UnityEngine">
+        <HintPath>References\Il2CppAssemblies\UnityEngine.dll</HintPath>
       </Reference>
       <Reference Include="UnityEngine.AudioModule">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Il2CppAssemblies\UnityEngine.AudioModule.dll</HintPath>
+        <HintPath>References\Il2CppAssemblies\UnityEngine.AudioModule.dll</HintPath>
       </Reference>
       <Reference Include="UnityEngine.CoreModule">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
+        <HintPath>References\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
       </Reference>
       <Reference Include="UnityEngine.ImageConversionModule">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Il2CppAssemblies\UnityEngine.ImageConversionModule.dll</HintPath>
+        <HintPath>References\Il2CppAssemblies\UnityEngine.ImageConversionModule.dll</HintPath>
       </Reference>
-      <Reference Include="WindowsBase">
-        <HintPath>E:\SteamLibrary\steamapps\common\BONELAB\MelonLoader\Managed\WindowsBase.dll</HintPath>
+      <Reference Include="UnityEngine.IMGUIModule">
+        <HintPath>References\Il2CppAssemblies\UnityEngine.IMGUIModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.TLSModule">
+        <HintPath>References\Il2CppAssemblies\UnityEngine.TLSModule.dll</HintPath>
       </Reference>
     </ItemGroup>
 
