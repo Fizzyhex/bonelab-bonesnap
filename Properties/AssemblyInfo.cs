@@ -2,14 +2,6 @@
 using BoneSnap;
 using MelonLoader;
 
-[assembly: AssemblyTitle(BoneSnap.Main.Description)]
-[assembly: AssemblyDescription(BoneSnap.Main.Description)]
-[assembly: AssemblyCompany(BoneSnap.Main.Company)]
-[assembly: AssemblyProduct(BoneSnap.Main.Name)]
-[assembly: AssemblyCopyright("Developed by " + BoneSnap.Main.Author)]
-[assembly: AssemblyTrademark(BoneSnap.Main.Company)]
-[assembly: AssemblyVersion(BoneSnap.Main.Version)]
-[assembly: AssemblyFileVersion(BoneSnap.Main.Version)]
 [assembly: MelonInfo(typeof(BoneSnap.Main), BoneSnap.Main.Name, BoneSnap.Main.Version, BoneSnap.Main.Author, BoneSnap.Main.DownloadLink)]
 [assembly: MelonColor(System.ConsoleColor.White)]
 
