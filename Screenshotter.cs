@@ -39,7 +39,7 @@ namespace BoneSnap
 
             // Encode texture into PNG
             byte[] bytes = (format == "png") ? ImageConversion.EncodeToPNG(screenshotTexture) : ImageConversion.EncodeToJPG(screenshotTexture, quality: quality);
-            Object.Destroy(screenshotTexture);
+            UnityEngine.Object.Destroy(screenshotTexture);
 
             // Output to file
             _screenshotIndex++;
