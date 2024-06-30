@@ -1,18 +1,17 @@
 ﻿using MelonLoader;
 using BoneLib.BoneMenu;
-
 using UnityEngine;
 
 namespace BoneSnap
 {
     internal partial class Main : MelonMod
     {
-        private delegate void ScreenshotCallback(byte[] image);
-
         public override void OnInitializeMelon()
         {
-            BoneSnap.Preferences.CreateMelonPreferences(MelonLoader.MelonPreferences.CreateCategory("BoneSnap"));
-            BoneSnap.BoneMenu.CreateBoneMenu(MenuManager.CreateCategory("BoneSnap", Color.white));
+            var melonPreferencesCategory = MelonPreferences.CreateCategory("BoneSnap");
+            var boneSnapPreferences = new BoneSnapPreferences(melonPreferencesCategory);
+            var boneMenuCategory = MenuManager.CreateCategory("BoneSnap", Color.white);
+            BoneMenu.CreateBoneMenu(boneSnapPreferences, boneMenuCategory);
             AssetManager.Initialize();
             base.OnInitializeMelon();
         }

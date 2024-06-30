@@ -1,32 +1,29 @@
-﻿using System.Collections.Generic;
-using System.IO;
-
-using MelonLoader;
+﻿using AudioImportLib;
+using MelonLoader.Utils;
 using UnityEngine;
-using AudioImportLib;
 
 namespace BoneSnap
 {
     internal static class AssetManager
     {
-        static readonly string userDataPath = MelonUtils.UserDataDirectory;
-        static readonly string modStoragePath = $"{userDataPath}/BoneSnap";
-        static readonly string audioPath = $"{modStoragePath}/Audio";
+        private static readonly string UserDataPath = MelonEnvironment.UserDataDirectory;
+        private static readonly string ModStoragePath = $"{UserDataPath}/BoneSnap";
+        private static readonly string AudioPath = $"{ModStoragePath}/Audio";
 
-        public static AudioClip captureTimerAudio;
-        public static AudioClip captureCompleteAudio;
-        public static AudioClip captureStartAudio;
+        public static AudioClip? CaptureTimerAudio;
+        public static AudioClip? CaptureCompleteAudio;
+        public static AudioClip? CaptureStartAudio;
 
         private static void LoadAudio()
         {
-            captureStartAudio = API.LoadAudioClip($"{audioPath}/capture_start.wav", true);
-            captureCompleteAudio = API.LoadAudioClip($"{audioPath}/capture_complete.wav", true);
-            captureTimerAudio = API.LoadAudioClip($"{audioPath}/capture_timer.wav", true);
+            CaptureStartAudio = API.LoadAudioClip($"{AudioPath}/capture_start.wav", true);
+            CaptureCompleteAudio = API.LoadAudioClip($"{AudioPath}/capture_complete.wav", true);
+            CaptureTimerAudio = API.LoadAudioClip($"{AudioPath}/capture_timer.wav", true);
         }
 
         private static void CreateDirectories()
         {
-            Directory.CreateDirectory(audioPath);
+            Directory.CreateDirectory(AudioPath);
         }
 
         public static void Initialize()

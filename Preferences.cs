@@ -3,28 +3,15 @@ using MelonLoader;
 
 namespace BoneSnap
 {
-    internal static class Preferences
+    public readonly struct BoneSnapPreferences(MelonPreferences_Category category)
     {
-        private static MelonPreferences_Category currentCategory;
-        public static MelonPreferences_Entry<int> captureDelay;
-        public static MelonPreferences_Entry<int> captureQuality;
-        public static MelonPreferences_Entry<string> currentDiscordWebhook;
-        public static MelonPreferences_Entry<string> outputPath;
+        public readonly MelonPreferences_Entry<int> CaptureDelay = category.CreateEntry("CaptureDelay", 4);
+        public readonly MelonPreferences_Entry<int> CaptureQuality = category.CreateEntry("CaptureQuality", 95);
+        public readonly MelonPreferences_Entry<string> OutputPath = category.CreateEntry("OutputPath", "UserData/Screenshots");
 
-        public static void CreateMelonPreferences(MelonPreferences_Category category)
+        public void ManualSave()
         {
-            currentCategory = category;
-            captureDelay = category.CreateEntry("CaptureDelay", 4);
-            captureQuality = category.CreateEntry("CaptureQuality", 95);
-            currentDiscordWebhook = category.CreateEntry("CurrentDiscordWebhook", "");
-            outputPath = category.CreateEntry("OutputPath", "UserData/Screenshots");
-            Directory.CreateDirectory(outputPath.Value);
-        }
-
-        // May need to find a better solution...
-        public static void ManualSave()
-        {
-            currentCategory.SaveToFile();
+            category.SaveToFile();
         }
     }
 }
