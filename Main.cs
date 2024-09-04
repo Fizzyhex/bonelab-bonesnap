@@ -10,7 +10,7 @@ namespace BoneSnap
         {
             var melonPreferencesCategory = MelonPreferences.CreateCategory("BoneSnap");
             var boneSnapPreferences = new BoneSnapPreferences(melonPreferencesCategory);
-            var boneMenuCategory = MenuManager.CreateCategory("BoneSnap", Color.white);
+            var boneMenuCategory = Page.Root.CreatePage("BoneSnap", Color.white);
             BoneMenu.CreateBoneMenu(boneSnapPreferences, boneMenuCategory);
             AssetManager.Initialize();
             base.OnInitializeMelon();
