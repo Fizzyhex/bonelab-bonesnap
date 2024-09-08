@@ -4,16 +4,17 @@
 # 📷 BoneSnap - A BONELAB Screenshotting Tool
 [Thunderstore](https://bonelab.thunderstore.io/package/Fizzyhex/BoneSnap) | [GitHub](https://github.com/Fizzyhex/bonelab-bonesnap)
 
-Take screenshots your game window with ease, with no more 4:3 jpgs and fumbling around blindly for your keyboard! All captures are saved to your clipboard and the UserData\Screenshots folder.
+Take full-resolution screenshots of your game window! Captures save to your clipboard and underneath the `UserData\Screenshots` folder (this is configurable!).
 
 ## Compatibility
 
-BoneSnap simply just takes a snapshot of your game window. In other words, the tool will work with camera mods (Cinematic Tools, GoPro, etc.) 
+BoneSnap simply just takes a snapshot of your game window. In other words, it'll work with your favourite camera mods.
 
-## Quality setting
+## Quality Control
 
-BoneSnap will output as a lossless image (PNG) by default, but you can also reduce the quality and it'll output as a JPG instead.
+BoneSnap will output as a lossless image (PNG) by default, you can optionally reduce the quality to output as a JPG and save on file storage.
 
 ## ♥ Thanks
 
-Hope you like the mod! Huge shoutout to trev and yellowyears for helping with debugging.
+- @TrevTV & @yellowyears - Debugging with initial release
+- @Checkerb0ard & FragileDeviations - Fixing for patches (am lazy)
