@@ -88,4 +88,19 @@
       </Reference>
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="References\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="References\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="References\**" />
+      <None Remove="README.md" />
+      <None Remove="LICENSE" />
+      <None Remove=".gitignore" />
+    </ItemGroup>
+
 </Project>
