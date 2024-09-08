@@ -12,7 +12,7 @@ namespace BoneSnap
         internal const string Description = "A window capture tool for BONELAB";
         internal const string Author = "Fizzyhex";
         internal const string Company = "";
-        internal const string Version = "2.0.0";
+        internal const string Version = "2.0.1";
         internal const string DownloadLink = "https://bonelab.thunderstore.io/package/Fizzyhex/BoneSnap";
     }
 }
