@@ -1,7 +1,6 @@
 ﻿using MelonLoader;
 using System.Collections;
 using System.Drawing;
-using System.Windows.Forms;
 using UnityEngine;
 using DateTime = System.DateTime;
 
@@ -44,9 +43,6 @@ namespace BoneSnap
             var filePath = outputPath + $"/{timecode} {_screenshotIndex}.{format}";
             
             File.WriteAllBytes(filePath, bytes);
-            Clipboard.SetImage(
-                (Bitmap)((new ImageConverter()).ConvertFrom(bytes))
-            );
             
             MelonLogger.Msg($"Screenshot saved as {filePath}!");
         }
